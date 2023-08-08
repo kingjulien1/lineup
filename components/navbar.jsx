@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Navbar() {
   return (
     <div className="navbar bg-base-100">
@@ -10,19 +12,13 @@ export default function Navbar() {
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a>Homepage</a>
-            </li>
-            <li>
-              <a>Portfolio</a>
-            </li>
-            <li>
-              <a>About</a>
+              <Link href="/dashboard" children="Dashboard" />
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost normal-case text-xl">lineup.love</a>
+        <Link className="btn btn-ghost normal-case text-xl" href="/" children="lineup.love" />
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">
