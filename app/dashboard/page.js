@@ -1,26 +1,10 @@
 "use client"
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+
 import { Menu, Popover, Transition } from "@headlessui/react"
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid"
+import { FaceFrownIcon, FaceSmileIcon, FireIcon, HandThumbUpIcon, HeartIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid"
 import { Bars3Icon, BellIcon, PaperClipIcon, XMarkIcon } from "@heroicons/react/24/outline"
-import { Fragment } from "react"
-import { useState } from "react"
 import { CheckCircleIcon } from "@heroicons/react/24/solid"
-import { FaceFrownIcon, FaceSmileIcon, FireIcon, HandThumbUpIcon, HeartIcon } from "@heroicons/react/20/solid"
-import { Listbox } from "@headlessui/react"
+import { Fragment, useState } from "react"
 
 const user = {
   name: "Tom Cook",
@@ -46,7 +30,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <>
+    <div>
       {/*
         This example requires updating your template:
 
@@ -268,7 +252,7 @@ export default function Example() {
           </div>
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -348,22 +332,22 @@ function ProfileDetails() {
 }
 
 const activity = [
-  { id: 6, type: "paid", person: { name: "Alex Curren" }, date: "1d ago", dateTime: "2023-01-24T09:20" },
-  { id: 6, type: "paid", person: { name: "Alex Curren" }, date: "1d ago", dateTime: "2023-01-24T09:20" },
-  { id: 1, type: "created", person: { name: "Chelsea Hagon" }, date: "7d ago", dateTime: "2023-01-23T10:32" },
-  { id: 2, type: "edited", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:03" },
-  { id: 1, type: "created", person: { name: "Chelsea Hagon" }, date: "7d ago", dateTime: "2023-01-23T10:32" },
-  { id: 1, type: "created", person: { name: "Chelsea Hagon" }, date: "7d ago", dateTime: "2023-01-23T10:32" },
-  { id: 1, type: "created", person: { name: "Chelsea Hagon" }, date: "7d ago", dateTime: "2023-01-23T10:32" },
-  { id: 2, type: "edited", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:03" },
-  { id: 3, type: "sent", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:24" },
-  { id: 2, type: "edited", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:03" },
-  { id: 3, type: "sent", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:24" },
-  { id: 2, type: "edited", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:03" },
-  { id: 3, type: "sent", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:24" },
-  { id: 3, type: "sent", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:24" },
+  { id: 1, type: "paid", person: { name: "Alex Curren" }, date: "1d ago", dateTime: "2023-01-24T09:20" },
+  { id: 2, type: "paid", person: { name: "Alex Curren" }, date: "1d ago", dateTime: "2023-01-24T09:20" },
+  { id: 3, type: "created", person: { name: "Chelsea Hagon" }, date: "7d ago", dateTime: "2023-01-23T10:32" },
+  { id: 4, type: "edited", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:03" },
+  { id: 5, type: "created", person: { name: "Chelsea Hagon" }, date: "7d ago", dateTime: "2023-01-23T10:32" },
+  { id: 6, type: "created", person: { name: "Chelsea Hagon" }, date: "7d ago", dateTime: "2023-01-23T10:32" },
+  { id: 7, type: "created", person: { name: "Chelsea Hagon" }, date: "7d ago", dateTime: "2023-01-23T10:32" },
+  { id: 8, type: "edited", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:03" },
+  { id: 9, type: "sent", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:24" },
+  { id: 10, type: "edited", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:03" },
+  { id: 11, type: "sent", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:24" },
+  { id: 12, type: "edited", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:03" },
+  { id: 20, type: "sent", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:24" },
+  { id: 13, type: "sent", person: { name: "Chelsea Hagon" }, date: "6d ago", dateTime: "2023-01-23T11:24" },
   {
-    id: 4,
+    id: 14,
     type: "commented",
     person: {
       name: "Chelsea Hagon",
@@ -373,8 +357,8 @@ const activity = [
     date: "3d ago",
     dateTime: "2023-01-23T15:56",
   },
-  { id: 5, type: "viewed", person: { name: "Alex Curren" }, date: "2d ago", dateTime: "2023-01-24T09:12" },
-  { id: 6, type: "paid", person: { name: "Alex Curren" }, date: "1d ago", dateTime: "2023-01-24T09:20" },
+  { id: 15, type: "viewed", person: { name: "Alex Curren" }, date: "2d ago", dateTime: "2023-01-24T09:12" },
+  { id: 16, type: "paid", person: { name: "Alex Curren" }, date: "1d ago", dateTime: "2023-01-24T09:20" },
 ]
 const moods = [
   { name: "Excited", value: "excited", icon: FireIcon, iconColor: "text-white", bgColor: "bg-red-500" },
